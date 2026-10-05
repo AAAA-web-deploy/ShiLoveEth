@@ -1,11 +1,10 @@
 /**
  * Editable project details for Shiba Loves ETH.
  *
- * Leave a link as an empty string until the real URL exists — the control
- * stays inactive. Replace `contract` with the deployed address to enable
- * copy. Set a claim's `verified` flag only when there is something to support it.
- *
- * The copy control copies `contract` exactly, including any wrapping on screen.
+ * Replace `contract` with the deployed address to enable copy. The control
+ * copies that string exactly, including any wrapping on screen.
+ * Set a claim's `verified` flag only when there is something to support it.
+ * `buyTax` and `sellTax` are the figures shown on the business card.
  */
 
 export const CONTRACT_PLACEHOLDER = "Coming soon…";
@@ -16,15 +15,17 @@ export const site = {
   network: "Ethereum",
   contract: CONTRACT_PLACEHOLDER,
   supply: "1,000,000,000",
+  buyTax: "0%",
+  sellTax: "0%",
   claims: {
     lpBurnt: { label: "LP burnt", verified: false },
     ownershipRenounced: { label: "Ownership renounced", verified: false },
   },
   links: {
-    x: "",
-    telegram: "",
-    swap: "",
-    chart: "",
+    x: "https://x.com/",
+    telegram: "https://t.me/",
+    swap: "https://www.dextools.io/",
+    chart: "https://dexscreener.com/",
   },
 } as const;
 

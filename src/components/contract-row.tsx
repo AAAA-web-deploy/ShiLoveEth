@@ -52,16 +52,21 @@ export function ContractRow({ contract }: { contract: string }) {
   }
 
   return (
-    <div className="flex w-full min-w-0 items-start gap-1">
-      <p
-        data-testid="contract-address"
-        className="min-w-0 flex-1 pt-0.5 text-[0.8rem] leading-snug font-bold text-white [overflow-wrap:anywhere] @min-[320px]:text-base"
-      >
-        {contract}
-        <span role="status" aria-live="polite" className="sr-only">
-          {note === "copied" ? "Copied" : note === "failed" ? "Couldn’t copy" : ""}
-        </span>
-      </p>
+    <div className="flex w-full min-w-0 items-start gap-2">
+      <div className="min-w-0 flex-1">
+        <p className="text-[0.62rem] font-extrabold tracking-[0.08em] text-[#f4ead8] uppercase @min-[280px]:text-xs">
+          Contract:
+        </p>
+        <p
+          data-testid="contract-address"
+          className="mt-1 min-h-[2.35em] font-mono text-[0.68rem] leading-[1.35] font-bold tracking-tight text-white [overflow-wrap:anywhere] @min-[260px]:text-[0.74rem]"
+        >
+          {contract}
+          <span role="status" aria-live="polite" className="sr-only">
+            {note === "copied" ? "Copied" : note === "failed" ? "Couldn’t copy" : ""}
+          </span>
+        </p>
+      </div>
       <button
         type="button"
         data-testid="copy-contract"
@@ -82,7 +87,7 @@ export function ContractRow({ contract }: { contract: string }) {
               : "Copy stays off until a real address replaces Coming soon"
         }
         onClick={copyAddress}
-        className="-mt-0.5 grid size-8 shrink-0 place-items-center rounded-md text-white transition hover:bg-white/10 disabled:cursor-default disabled:opacity-100"
+        className="mt-5 grid size-8 shrink-0 place-items-center rounded-md text-white transition hover:bg-white/10 disabled:cursor-default disabled:opacity-100"
       >
         {note === "copied" ? (
           <Check className="size-5 text-[#b7f0c8]" />
