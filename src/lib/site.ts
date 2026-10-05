@@ -32,8 +32,6 @@ export const story = {
   heroMessageLead: "Visiting Solana.",
   heroMessageTail: "Representing Ethereum.",
   receptionTitle: "A name. A passion. A business card.",
-  receptionDeck:
-    "At the Solana visitor desk, the Shiba hands over one answer: he loves ETH.",
   ethTitle: "Ethereum is home.",
   ethDeck: "A guest in Solana. An ETH fan everywhere.",
   ethNote: "Independent Ethereum meme",

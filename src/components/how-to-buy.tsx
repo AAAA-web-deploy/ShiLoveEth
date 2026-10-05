@@ -49,14 +49,8 @@ const buySteps = [
 
 export function HowToBuy() {
   return (
-    <div className="pt-14 sm:pt-16 lg:pt-20">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <h2 className="max-w-3xl font-serif text-4xl leading-[1.05] font-semibold tracking-tight text-balance text-ink sm:text-5xl lg:text-6xl">
-          {story.crowdTitle}
-        </h2>
-      </div>
-
-      <div className="relative mt-8 sm:mt-10">
+    <div>
+      <div className="relative">
         <Image
           src="/art/crowd.webp"
           alt="A cheering crowd and dogs with the Shiba at sunset by the sea."
@@ -66,7 +60,12 @@ export function HowToBuy() {
           className="h-auto w-full"
           style={{ width: "100%", height: "auto" }}
         />
-        <div className="relative z-10 -mt-28 mr-3 ml-auto w-[min(16.5rem,88%)] sm:absolute sm:top-1/2 sm:right-[6%] sm:mt-0 sm:mr-0 sm:w-[24%] sm:max-w-[18.5rem] sm:-translate-y-1/2 lg:right-[8%]">
+        <div className="pointer-events-none absolute inset-x-0 top-0 z-20 bg-[linear-gradient(180deg,rgba(255,247,238,0.96)_0%,rgba(255,247,238,0.8)_40%,transparent_100%)] px-4 pt-3 pb-8 sm:px-8 sm:pt-6 sm:pb-14 lg:px-12 lg:pt-8">
+          <h2 className="max-w-[94%] font-serif text-[1.7rem] leading-[1.15] font-semibold tracking-tight text-balance text-ink box-decoration-clone bg-[#fff7ee]/90 px-1.5 sm:max-w-xl sm:bg-transparent sm:px-0 sm:text-5xl sm:leading-[0.98] lg:max-w-[48%] lg:text-6xl">
+            {story.crowdTitle}
+          </h2>
+        </div>
+        <div className="relative z-10 -mt-20 mr-3 ml-auto w-[min(16.5rem,88%)] sm:absolute sm:top-1/2 sm:right-[6%] sm:mt-0 sm:mr-0 sm:w-[24%] sm:max-w-[18.5rem] sm:-translate-y-1/2 lg:right-[8%]">
           <article className="@container flex aspect-[2/3.5] w-full min-w-0 flex-col rounded-[1.15rem] border border-[#e4d0aa] bg-[#fff8ee] px-3 py-3.5 shadow-[0_16px_36px_rgba(40,24,8,0.28)] @min-[280px]:px-4 @min-[280px]:py-4">
             <h3 className="text-center font-sans text-lg leading-none font-extrabold tracking-[0.12em] text-[#17233a] uppercase @min-[280px]:text-[1.45rem]">
               {story.howToTitle}
