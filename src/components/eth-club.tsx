@@ -5,7 +5,7 @@ import { site, story } from "@/lib/site";
 
 export function EthClub() {
   return (
-    <div className="bg-[#071433]">
+    <div className="bg-paper">
       <div className="relative mx-auto w-[70vw]">
         <Image
           src="/art/eth-club.webp"
@@ -34,9 +34,9 @@ export function EthClub() {
               X
             </ExternalAction>
           </div>
-          <p className="text-center text-sm font-bold text-white/90">
-            <Ticker className="text-white" heartClassName="text-[#ff5a5a]" />
-            <span className="mx-2 text-white/45">·</span>
+          <p className="text-center text-sm font-bold text-ink xl:text-white/90">
+            <Ticker className="text-ink xl:text-white" heartClassName="text-[#ff5a5a]" />
+            <span className="mx-2 text-ink/40 xl:text-white/45">·</span>
             {story.ethNote}
           </p>
         </div>

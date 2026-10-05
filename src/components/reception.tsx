@@ -3,7 +3,7 @@ import { TokenCard } from "@/components/token-card";
 
 export function Reception() {
   return (
-    <div className="bg-[#fdf6e4] xl:pb-10">
+    <div className="bg-[#fdf6e4]">
       <div className="relative mx-auto w-[70vw]">
         <Image
           src="/art/reception.webp"
