@@ -1,9 +1,35 @@
 "use client";
 
-import { Check, Copy } from "lucide-react";
+import { Check } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
 import { isContractAvailable } from "@/lib/site";
+
+function OverlapSquares({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+      <rect
+        x="2.2"
+        y="8"
+        width="13"
+        height="13"
+        rx="2.6"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.15"
+      />
+      <rect
+        x="8.8"
+        y="3"
+        width="13"
+        height="13"
+        rx="2.6"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.15"
+      />
+    </svg>
+  );
+}
 
 export function ContractRow({ contract }: { contract: string }) {
   const ready = isContractAvailable(contract);
@@ -26,49 +52,46 @@ export function ContractRow({ contract }: { contract: string }) {
   }
 
   return (
-    <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-3">
-      <div className="min-w-0">
-        <p className="flex items-center gap-2 text-[0.68rem] font-extrabold tracking-[0.16em] text-gold uppercase">
-          Contract
-          <span role="status" aria-live="polite" className="tracking-normal normal-case">
-            {note === "copied" ? (
-              <span className="text-[#b7f0c8]">Copied</span>
-            ) : note === "failed" ? (
-              <span className="text-[#ffd0c8]">Couldn’t copy</span>
-            ) : null}
-          </span>
-        </p>
-        <p
-          data-testid="contract-address"
-          className="mt-1 font-mono text-[0.8125rem] leading-relaxed break-all text-white [overflow-wrap:anywhere]"
-        >
-          {contract}
-        </p>
-      </div>
-      <Button
+    <div className="flex min-w-0 items-start gap-1.5">
+      <p
+        data-testid="contract-address"
+        className="min-w-0 pt-0.5 text-[0.95rem] leading-snug font-bold break-all text-white [overflow-wrap:anywhere] sm:text-base"
+      >
+        {contract}
+        <span role="status" aria-live="polite" className="sr-only">
+          {note === "copied" ? "Copied" : note === "failed" ? "Couldn’t copy" : ""}
+        </span>
+      </p>
+      <button
         type="button"
-        size="icon"
-        variant="outline"
         data-testid="copy-contract"
         data-copy-ready={ready ? "true" : "false"}
         disabled={!ready}
         aria-label={
-          ready ? "Copy contract address" : "Contract address not available yet"
+          note === "copied"
+            ? "Copied"
+            : ready
+              ? "Copy contract address"
+              : "Contract address not available yet"
         }
         title={
-          ready
-            ? "Copy contract address"
-            : "Copy stays off until a real address replaces Coming soon"
+          note === "copied"
+            ? "Copied"
+            : ready
+              ? "Copy contract address"
+              : "Copy stays off until a real address replaces Coming soon"
         }
         onClick={copyAddress}
-        className="mt-0.5 size-11 rounded-xl border-gold/70 bg-[#10243f] text-gold hover:bg-white/12 hover:text-white disabled:border-gold/55 disabled:bg-[#10243f] disabled:text-gold disabled:opacity-100"
+        className="-mt-0.5 grid size-8 shrink-0 place-items-center rounded-md text-white transition hover:bg-white/10 disabled:cursor-default disabled:opacity-100"
       >
         {note === "copied" ? (
-          <Check className="size-4" />
+          <Check className="size-5 text-[#b7f0c8]" />
+        ) : note === "failed" ? (
+          <span className="text-[0.65rem] font-extrabold text-[#ffd0c8]">!</span>
         ) : (
-          <Copy className="size-4" />
+          <OverlapSquares className="size-6" />
         )}
-      </Button>
+      </button>
     </div>
   );
 }

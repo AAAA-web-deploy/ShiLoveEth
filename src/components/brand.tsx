@@ -34,22 +34,30 @@ export function Ticker({
   );
 }
 
-export function EthDiamond({ className }: { className?: string }) {
+export function EthDiamond({
+  className,
+  id = "eth",
+}: {
+  className?: string;
+  id?: string;
+}) {
+  const face = `${id}-face`;
+  const base = `${id}-base`;
   return (
     <svg viewBox="0 0 64 64" aria-hidden="true" className={className}>
       <defs>
-        <linearGradient id="eth-face" x1="12" y1="2" x2="52" y2="46">
+        <linearGradient id={face} x1="12" y1="2" x2="52" y2="46">
           <stop offset="0" stopColor="#efe7ff" />
           <stop offset="0.45" stopColor="#8d6bff" />
           <stop offset="1" stopColor="#4a2f9b" />
         </linearGradient>
-        <linearGradient id="eth-base" x1="14" y1="36" x2="50" y2="62">
+        <linearGradient id={base} x1="14" y1="36" x2="50" y2="62">
           <stop offset="0" stopColor="#6d4fe0" />
           <stop offset="1" stopColor="#2c1b66" />
         </linearGradient>
       </defs>
-      <path fill="url(#eth-face)" d="M32 2 54 32.2 32 43.4 10 32.2 32 2z" />
-      <path fill="url(#eth-base)" d="M32 47.2 54 35.6 32 62 10 35.6 32 47.2z" />
+      <path fill={`url(#${face})`} d="M32 2 54 32.2 32 43.4 10 32.2 32 2z" />
+      <path fill={`url(#${base})`} d="M32 47.2 54 35.6 32 62 10 35.6 32 47.2z" />
       <path fill="#fff" fillOpacity="0.38" d="M32 2 43.2 32.2 32 43.4 32 2z" />
       <path fill="#1b103f" fillOpacity="0.18" d="M32 47.2 43.2 35.8 32 58.5 32 47.2z" />
     </svg>

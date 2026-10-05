@@ -25,6 +25,7 @@ export const site = {
     telegram: "",
     swap: "",
     chart: "",
+    howToBuy: "",
   },
 } as const;
 
@@ -42,16 +43,14 @@ export const story = {
     "The crowd is fictional artwork. The guide beside it is the practical part.",
   crowdCaption: "Fictional community artwork.",
   howToTitle: "How to buy",
-  howToIntro:
-    "Four steps on Ethereum. The swap stays closed until a contract and a destination are supplied.",
   steps: [
-    "Set up an Ethereum wallet.",
-    "Add ETH. Keep some for gas.",
-    "Verify the token contract.",
-    "Review your swap and confirm.",
+    ["Set up an", "Ethereum wallet."],
+    ["2. Add ETH.", "Keep some for gas."],
+    ["3. Verify the token", "contract."],
+    ["4. Review your swap", "and confirm."],
   ],
   launchNote: "Available after launch",
-  verificationNote: "Preview claim — verification required",
+  verificationNote: "Preview claims — verification required",
   parody:
     "Independent parody. Unaffiliated with SHIB, Ethereum, Solana, or Sunrise.",
 } as const;
