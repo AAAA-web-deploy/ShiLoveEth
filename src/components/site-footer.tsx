@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Ticker } from "@/components/brand";
-import { site, story } from "@/lib/site";
+import { site } from "@/lib/site";
 
 const LINKS = [
   { href: "#visit", label: "Visit" },
@@ -33,9 +33,6 @@ export function SiteFooter() {
           ))}
         </nav>
       </div>
-      <p className="mx-auto max-w-6xl px-4 pb-8 text-sm leading-relaxed text-white/65 sm:px-6 lg:px-8">
-        {story.parody}
-      </p>
     </footer>
   );
 }

@@ -25,7 +25,6 @@ export const site = {
     telegram: "",
     swap: "",
     chart: "",
-    howToBuy: "",
   },
 } as const;
 
@@ -39,9 +38,6 @@ export const story = {
   ethDeck: "A guest in Solana. An ETH fan everywhere.",
   ethNote: "Independent Ethereum meme",
   crowdTitle: "Big hearts. Ethereum roots.",
-  crowdDeck:
-    "The crowd is fictional artwork. The guide beside it is the practical part.",
-  crowdCaption: "Fictional community artwork.",
   howToTitle: "How to buy",
   steps: [
     ["Set up an", "Ethereum wallet."],
@@ -49,10 +45,6 @@ export const story = {
     ["3. Verify the token", "contract."],
     ["4. Review your swap", "and confirm."],
   ],
-  launchNote: "Available after launch",
-  verificationNote: "Preview claims — verification required",
-  parody:
-    "Independent parody. Unaffiliated with SHIB, Ethereum, Solana, or Sunrise.",
 } as const;
 
 export function isLiveUrl(value: string) {

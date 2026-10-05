@@ -32,7 +32,7 @@ const mono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Shiba Loves ETH ($SHB❤️ETH)",
   description:
-    "Visiting Solana. Representing Ethereum. Shiba Loves ETH is an independent parody — a guest in Solana, and an ETH fan everywhere.",
+    "Visiting Solana. Representing Ethereum. A guest in Solana, and an ETH fan everywhere.",
   openGraph: {
     title: "Shiba Loves ETH ($SHB❤️ETH)",
     description:

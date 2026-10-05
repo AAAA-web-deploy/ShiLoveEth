@@ -19,8 +19,8 @@ All live details live in [`src/lib/site.ts`](src/lib/site.ts).
 | --- | --- |
 | `contract` | Shows “Coming soon…”. The copy control stays inactive. |
 | `links.x` and `links.telegram` | Header and ETH Club buttons do not open anything. |
-| `links.swap`, `links.chart`, and `links.howToBuy` | Swap, View Chart, and Open How to Buy page stay inactive. |
-| `claims.*.verified` | The card keeps “Preview claims — verification required” under the LP and ownership lines. |
+| `links.swap` and `links.chart` | Swap and View Chart stay inactive. |
+| `claims.*.verified` | LP burnt and ownership renounced stay on the card either way. |
 
 Paste a real `https://` URL to turn a link on. Replace `contract` with the deployed address to turn copy on. The control copies that string exactly, even when the address wraps onto more than one line.
 

@@ -17,10 +17,10 @@ export function EthClub() {
       />
       <div className="night-panel px-5 py-10 sm:px-8 lg:absolute lg:inset-y-0 lg:right-0 lg:flex lg:w-[min(48%,36rem)] lg:items-center lg:px-10 lg:py-8 xl:px-14">
         <div className="max-w-md">
-          <h2 className="font-serif text-4xl leading-[1.05] font-semibold tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
+          <h2 className="font-serif text-5xl leading-[0.95] font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
             {story.ethTitle}
           </h2>
-          <p className="mt-3 max-w-sm text-lg leading-snug font-semibold text-white/90">
+          <p className="mt-4 max-w-sm text-xl leading-snug font-semibold text-white/90 sm:text-2xl">
             {story.ethDeck}
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-3">
