@@ -1,0 +1,160 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-nunito), "Nunito", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+  --font-display: var(--font-lilita), "Lilita One", ui-sans-serif, sans-serif;
+  --font-serif: var(--font-fraunces), Fraunces, ui-serif, Georgia, serif;
+  --font-heading: var(--font-serif);
+  --color-ink: #17233a;
+  --color-paper: #fbf6ee;
+  --color-sand: #f4e4cc;
+  --color-navy: #16345c;
+  --color-night: #0e1c34;
+  --color-gold: #e4c27a;
+  --color-heart: #e23d3d;
+  --color-sun: #ef8a3c;
+  --color-sea: #1d6eab;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --header-h: 4.5rem;
+  --background: #fbf6ee;
+  --foreground: #17233a;
+  --card: #fffaf3;
+  --card-foreground: #17233a;
+  --popover: #fffaf3;
+  --popover-foreground: #17233a;
+  --primary: #16345c;
+  --primary-foreground: #fbf6ee;
+  --secondary: #f4e4cc;
+  --secondary-foreground: #17233a;
+  --muted: #f3eadc;
+  --muted-foreground: #5d6b80;
+  --accent: #f6d7b0;
+  --accent-foreground: #17233a;
+  --destructive: #e23d3d;
+  --border: #e6d5b8;
+  --input: #e6d5b8;
+  --ring: #ef8a3c;
+  --chart-1: #ef8a3c;
+  --chart-2: #1d6eab;
+  --chart-3: #e4c27a;
+  --chart-4: #16345c;
+  --chart-5: #e23d3d;
+  --radius: 1rem;
+  --sidebar: #fbf6ee;
+  --sidebar-foreground: #17233a;
+  --sidebar-primary: #16345c;
+  --sidebar-primary-foreground: #fbf6ee;
+  --sidebar-accent: #f4e4cc;
+  --sidebar-accent-foreground: #17233a;
+  --sidebar-border: #e6d5b8;
+  --sidebar-ring: #ef8a3c;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+    overflow-x: clip;
+  }
+  body {
+    @apply bg-background text-foreground;
+    overflow-x: clip;
+  }
+}
+
+@utility poster-ink {
+  text-shadow:
+    0 2px 0 rgba(16, 28, 48, 0.55),
+    0 12px 28px rgba(8, 18, 36, 0.38);
+}
+
+.scroll-anchor {
+  scroll-margin-top: var(--header-h);
+}
+
+#business-card {
+  scroll-margin-top: calc(var(--header-h) + 1rem);
+}
+
+.story-paper {
+  background-color: #f7f1e6;
+  background-image:
+    radial-gradient(ellipse at 0% 0%, rgba(239, 138, 60, 0.1), transparent 46%),
+    radial-gradient(ellipse at 100% 80%, rgba(29, 110, 171, 0.08), transparent 42%);
+}
+
+.night-panel {
+  background:
+    radial-gradient(ellipse at 80% 0%, rgba(125, 96, 220, 0.22), transparent 55%),
+    linear-gradient(180deg, #10203c 0%, #0c1730 100%);
+}
+
+@media (min-width: 1024px) {
+  .night-panel {
+    background: linear-gradient(
+      to left,
+      rgba(7, 17, 31, 0.92) 0%,
+      rgba(7, 17, 31, 0.62) 46%,
+      rgba(7, 17, 31, 0) 100%
+    );
+  }
+}
+
+::selection {
+  background: rgba(228, 194, 122, 0.55);
+  color: #17233a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
