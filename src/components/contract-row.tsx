@@ -2,7 +2,6 @@
 
 import { Check } from "lucide-react";
 import { useEffect, useState } from "react";
-import { isContractAvailable } from "@/lib/site";
 
 function OverlapSquares({ className }: { className?: string }) {
   return (
@@ -31,8 +30,37 @@ function OverlapSquares({ className }: { className?: string }) {
   );
 }
 
+function copyWithSelection(value: string) {
+  const area = document.createElement("textarea");
+  area.value = value;
+  area.setAttribute("readonly", "");
+  area.style.position = "fixed";
+  area.style.top = "0";
+  area.style.left = "0";
+  area.style.opacity = "0";
+  document.body.appendChild(area);
+  area.focus();
+  area.select();
+  const copied = document.execCommand("copy");
+  area.remove();
+  if (!copied) throw new Error("copy failed");
+}
+
+async function copyContractText(value: string) {
+  try {
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(value);
+      return;
+    }
+  } catch {
+    // Clipboard can reject outside a secure context. The selection fallback still copies.
+  }
+  copyWithSelection(value);
+}
+
 export function ContractRow({ contract }: { contract: string }) {
-  const ready = isContractAvailable(contract);
+  const value = contract.trim();
+  const ready = value.length > 0;
   const [note, setNote] = useState<"copied" | "failed" | "">("");
 
   useEffect(() => {
@@ -44,7 +72,7 @@ export function ContractRow({ contract }: { contract: string }) {
   async function copyAddress() {
     if (!ready) return;
     try {
-      await navigator.clipboard.writeText(contract);
+      await copyContractText(value);
       setNote("copied");
     } catch {
       setNote("failed");
@@ -72,20 +100,8 @@ export function ContractRow({ contract }: { contract: string }) {
         data-testid="copy-contract"
         data-copy-ready={ready ? "true" : "false"}
         disabled={!ready}
-        aria-label={
-          note === "copied"
-            ? "Copied"
-            : ready
-              ? "Copy contract address"
-              : "Contract address not available yet"
-        }
-        title={
-          note === "copied"
-            ? "Copied"
-            : ready
-              ? "Copy contract address"
-              : "Copy stays off until a real address replaces Coming soon"
-        }
+        aria-label={note === "copied" ? "Copied" : note === "failed" ? "Couldn’t copy" : "Copy contract address"}
+        title={note === "copied" ? "Copied" : "Copy contract address"}
         onClick={copyAddress}
         className="mt-5 grid size-8 shrink-0 place-items-center rounded-md text-white transition hover:bg-white/10 disabled:cursor-default disabled:opacity-100"
       >

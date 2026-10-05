@@ -1,8 +1,7 @@
 /**
  * Editable project details for Shiba Loves ETH.
  *
- * Replace `contract` with the deployed address to enable copy. The control
- * copies that string exactly, including any wrapping on screen.
+ * The copy control copies `contract` exactly, including any wrapping on screen.
  * Set a claim's `verified` flag only when there is something to support it.
  * `buyTax` and `sellTax` are the figures shown on the business card.
  */
@@ -49,10 +48,4 @@ export const story = {
 
 export function isLiveUrl(value: string) {
   return /^https?:\/\/\S+$/i.test(value.trim());
-}
-
-export function isContractAvailable(value: string) {
-  const trimmed = value.trim().toLowerCase();
-  if (!trimmed) return false;
-  return trimmed !== "coming soon…" && trimmed !== "coming soon...";
 }
