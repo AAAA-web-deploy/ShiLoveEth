@@ -30,6 +30,7 @@ const mono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://shibalove.site"),
   title: "Shiba Loves ETH ($SHB❤️ETH)",
   description:
     "Visiting Solana. Representing Ethereum. A guest in Solana, and an ETH fan everywhere.",
