@@ -61,7 +61,7 @@ export function ContractRow({ contract }: { contract: string }) {
             : "Copy stays off until a real address replaces Coming soon"
         }
         onClick={copyAddress}
-        className="mt-0.5 size-10 rounded-xl border-gold/50 bg-white/8 text-gold hover:bg-white/15 hover:text-white disabled:border-white/15 disabled:bg-transparent disabled:text-white/35"
+        className="mt-0.5 size-11 rounded-xl border-gold/70 bg-[#10243f] text-gold hover:bg-white/12 hover:text-white disabled:border-gold/55 disabled:bg-[#10243f] disabled:text-gold disabled:opacity-100"
       >
         {note === "copied" ? (
           <Check className="size-4" />

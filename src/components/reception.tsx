@@ -9,7 +9,7 @@ export function Reception() {
         <h2 className="text-center font-serif text-4xl leading-[1.05] font-semibold tracking-tight text-balance text-ink sm:text-5xl lg:text-6xl">
           {story.receptionTitle}
         </h2>
-        <p className="mx-auto mt-4 max-w-xl text-center text-base leading-relaxed font-semibold text-ink/75 sm:text-lg">
+        <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-relaxed font-semibold text-balance text-ink/75 sm:text-lg">
           {story.receptionDeck}
         </p>
 

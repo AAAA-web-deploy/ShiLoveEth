@@ -23,16 +23,22 @@ function useActiveSection() {
 
   useEffect(() => {
     const update = () => {
-      const header = document.querySelector("header");
-      const offset = (header?.getBoundingClientRect().height ?? 72) + 8;
-      const line = window.scrollY + offset;
+      const bar = document.querySelector("[data-header-bar]");
+      const headerH = bar?.getBoundingClientRect().height ?? 72;
+      // A section counts once its top reaches the upper third, so the
+      // highlight matches the story on screen rather than waiting until
+      // the heading touches the header.
+      const marker =
+        window.scrollY + headerH + Math.min(220, window.innerHeight * 0.34);
       let current: SectionId = "visit";
       for (const item of NAV) {
         const section = document.getElementById(item.id);
         if (!section) continue;
         const top = section.getBoundingClientRect().top + window.scrollY;
-        if (top <= line) current = item.id;
+        if (top <= marker) current = item.id;
       }
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight - 4;
+      if (maxScroll > 0 && window.scrollY >= maxScroll) current = "how-to-buy";
       setActive(current);
       setScrolled(window.scrollY > 8);
     };
@@ -53,10 +59,12 @@ function NavLinks({
   active,
   onNavigate,
   className,
+  stacked = false,
 }: {
   active: SectionId;
   onNavigate?: () => void;
   className?: string;
+  stacked?: boolean;
 }) {
   return (
     <nav className={className} aria-label="On this page">
@@ -72,6 +80,7 @@ function NavLinks({
             onClick={onNavigate}
             className={cn(
               "rounded-full px-3 py-2 text-sm font-extrabold transition-colors lg:py-1.5",
+              stacked && "w-full",
               current
                 ? "bg-ink text-paper shadow-sm"
                 : "text-ink/80 hover:bg-ink/6 hover:text-ink",
@@ -127,7 +136,10 @@ export function SiteHeader() {
         scrolled && "shadow-[0_10px_30px_rgba(23,35,58,0.08)]",
       )}
     >
-      <div className="mx-auto flex h-[var(--header-h)] max-w-6xl items-center gap-3 px-4 sm:px-6 lg:px-8">
+      <div
+        data-header-bar
+        className="mx-auto flex h-[var(--header-h)] max-w-6xl items-center gap-3 px-4 sm:px-6 lg:px-8"
+      >
         <a href="#visit" className="flex min-w-0 items-center gap-2.5" onClick={() => setOpen(false)}>
           <Image
             src="/art/logo.webp"
@@ -168,6 +180,7 @@ export function SiteHeader() {
         <div id="mobile-nav" className="border-t border-gold/40 bg-paper px-4 py-4 lg:hidden">
           <NavLinks
             active={active}
+            stacked
             onNavigate={() => setOpen(false)}
             className="flex flex-col items-stretch gap-1"
           />

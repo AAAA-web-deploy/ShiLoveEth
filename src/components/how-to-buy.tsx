@@ -13,7 +13,7 @@ export function HowToBuy() {
         <h2 className="max-w-3xl font-serif text-4xl leading-[1.05] font-semibold tracking-tight text-balance text-ink sm:text-5xl lg:text-6xl">
           {story.crowdTitle}
         </h2>
-        <p className="mt-4 max-w-xl text-base leading-relaxed font-semibold text-ink/75 sm:text-lg">
+        <p className="mt-4 max-w-xl text-base leading-relaxed font-semibold text-balance text-ink/75 sm:text-lg">
           {story.crowdDeck}
         </p>
 

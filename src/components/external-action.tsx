@@ -25,8 +25,9 @@ export function ExternalAction({
       <Button
         type="button"
         aria-disabled="true"
+        data-inactive="true"
         title={unavailable}
-        className={cn(className, "cursor-not-allowed opacity-50")}
+        className={cn(className, "cursor-not-allowed")}
         onClick={(event) => event.preventDefault()}
       >
         {children}

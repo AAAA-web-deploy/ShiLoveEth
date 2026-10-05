@@ -18,7 +18,7 @@ export function TokenCard() {
       <div className="relative flex items-center gap-4">
         <EthDiamond className="size-14 shrink-0 drop-shadow-[0_8px_16px_rgba(20,10,50,0.35)]" />
         <div className="min-w-0">
-          <p className="font-serif text-2xl leading-none font-semibold tracking-tight">
+          <p className="font-serif text-xl leading-none font-semibold tracking-tight sm:text-2xl">
             {site.name}
           </p>
           <Ticker className="mt-2 block text-sm font-extrabold" />
