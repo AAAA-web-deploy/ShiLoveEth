@@ -1,6 +1,6 @@
 # Shiba Loves ETH
 
-A single scrolling page for **Shiba Loves ETH** (`$SHB❤️ETH`). The Shiba is visiting Solana and still answers to Ethereum. Artwork is illustrated; headings, the token card, navigation, and the buying guide are editable page content.
+A single scrolling page for **Shiba Loves ETH** (`$SHB❤️ETH`). The Shiba is visiting Solana and still answers to Ethereum. Each scene is illustrated artwork at 70% of the screen width, and the scene titles are drawn into that artwork. The token card, navigation, and the buying guide are editable page content.
 
 ## Run the preview
 

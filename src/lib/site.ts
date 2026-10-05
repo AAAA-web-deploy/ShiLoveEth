@@ -29,6 +29,7 @@ export const site = {
 } as const;
 
 export const story = {
+  // These lines are already drawn into the scene artwork, so the page does not print them again.
   heroMessageLead: "Visiting Solana.",
   heroMessageTail: "Representing Ethereum.",
   receptionTitle: "A name. A passion. A business card.",
@@ -39,9 +40,9 @@ export const story = {
   howToTitle: "How to buy",
   steps: [
     ["Set up an", "Ethereum wallet."],
-    ["2. Add ETH.", "Keep some for gas."],
-    ["3. Verify the token", "contract."],
-    ["4. Review your swap", "and confirm."],
+    ["Add ETH.", "Keep some for gas."],
+    ["Verify the token", "contract."],
+    ["Review your swap", "and confirm."],
   ],
 } as const;
 

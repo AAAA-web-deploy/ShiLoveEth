@@ -55,7 +55,7 @@ export function ContractRow({ contract }: { contract: string }) {
     <div className="flex w-full min-w-0 items-start gap-1">
       <p
         data-testid="contract-address"
-        className="min-w-0 flex-1 pt-0.5 text-[0.8rem] leading-snug font-bold break-all text-white [overflow-wrap:anywhere] @min-[320px]:text-base"
+        className="min-w-0 flex-1 pt-0.5 text-[0.8rem] leading-snug font-bold text-white [overflow-wrap:anywhere] @min-[320px]:text-base"
       >
         {contract}
         <span role="status" aria-live="polite" className="sr-only">
