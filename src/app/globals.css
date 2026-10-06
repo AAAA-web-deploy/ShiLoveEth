@@ -167,32 +167,32 @@
 .card-slab {
   position: relative;
   transform-style: preserve-3d;
-  transform: rotateX(10deg) rotateY(16deg);
+  transform: rotateX(14deg) rotateY(24deg);
   animation: card-drift 20s ease-in-out infinite;
 }
 
 .card-slab-buy {
-  transform: rotateX(16deg) rotateY(32deg);
+  transform: rotateX(13deg) rotateY(22deg);
   animation: card-drift-buy 24s ease-in-out infinite;
 }
 
 @keyframes card-drift {
   0%,
   100% {
-    transform: rotateX(10deg) rotateY(16deg) translateY(0);
+    transform: rotateX(14deg) rotateY(24deg) translateY(0);
   }
   50% {
-    transform: rotateX(20deg) rotateY(38deg) translateY(-14px);
+    transform: rotateX(17deg) rotateY(30deg) translateY(-4px);
   }
 }
 
 @keyframes card-drift-buy {
   0%,
   100% {
-    transform: rotateX(16deg) rotateY(32deg) translateY(-8px);
+    transform: rotateX(13deg) rotateY(22deg) translateY(0);
   }
   50% {
-    transform: rotateX(8deg) rotateY(12deg) translateY(10px);
+    transform: rotateX(16deg) rotateY(28deg) translateY(-4px);
   }
 }
 
