@@ -23,8 +23,8 @@ export const site = {
   links: {
     x: "https://x.com/shibalove_eth",
     telegram: "https://t.me/shibaloveeth",
-    swap: "https://www.dextools.io/0x8190500d48a032fc7b5abc13c38ed293b2520260",
-    chart: "https://dexscreener.com/0x8190500d48a032fc7b5abc13c38ed293b2520260",
+    swap: "https://www.dextools.io/app/ether/pair-explorer/0x8190500d48a032fc7b5abc13c38ed293b2520260",
+    chart: "https://dexscreener.com/ethereum/0x8190500d48a032fc7b5abc13c38ed293b2520260",
   },
 } as const;
 
