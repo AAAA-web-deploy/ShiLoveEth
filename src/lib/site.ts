@@ -21,7 +21,7 @@ export const site = {
     ownershipRenounced: { label: "Ownership renounced", verified: false },
   },
   links: {
-    x: "https://x.com/",
+    x: "https://x.com/shibalove_eth",
     telegram: "https://t.me/shibaloveeth",
     swap: "https://www.dextools.io/",
     chart: "https://dexscreener.com/",
