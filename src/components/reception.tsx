@@ -13,7 +13,7 @@ export function Reception() {
           sizes="70vw"
           className="block h-auto w-full"
         />
-        <div className="relative z-10 mx-auto mt-5 w-full max-w-[20rem] pb-8 xl:absolute xl:top-[22%] xl:right-[11%] xl:mt-0 xl:w-[22%] xl:max-w-[17.5rem] xl:pb-0 xl:-rotate-[8deg]">
+        <div className="relative z-10 mx-auto mt-5 w-full max-w-[20rem] pb-10 xl:absolute xl:top-[15%] xl:right-[12%] xl:mt-0 xl:w-[21%] xl:max-w-[16.5rem] xl:pb-0 xl:-rotate-[8deg]">
           <TokenCard />
         </div>
       </div>

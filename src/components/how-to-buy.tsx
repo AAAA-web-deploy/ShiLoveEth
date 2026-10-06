@@ -59,8 +59,12 @@ export function HowToBuy() {
           sizes="70vw"
           className="block h-auto w-full"
         />
-        <div className="relative z-10 mx-auto mt-5 w-full max-w-[17rem] pb-8 xl:absolute xl:top-1/2 xl:right-[4%] xl:mt-0 xl:w-[22%] xl:max-w-[16.5rem] xl:-translate-y-1/2 xl:pb-0">
-          <article className="@container flex aspect-[2/3.5] w-full min-w-0 flex-col rounded-[1.15rem] border border-[#e4d0aa] bg-[#fff8ee] px-3 py-3.5 shadow-[0_16px_36px_rgba(40,24,8,0.28)] @min-[280px]:px-4 @min-[280px]:py-4">
+        <div className="card-stage relative z-10 mx-auto mt-5 w-full max-w-[17rem] pb-10 xl:absolute xl:top-1/2 xl:right-[5%] xl:mt-0 xl:w-[19%] xl:max-w-[14.75rem] xl:-translate-y-[54%] xl:pb-0">
+          <div className="card-slab card-slab-buy">
+            <span aria-hidden="true" className="card-slab-depth" />
+            <span aria-hidden="true" className="card-slab-side" />
+            <span aria-hidden="true" className="card-slab-bottom" />
+          <article className="card-slab-face @container flex aspect-[2/3.5] w-full min-w-0 flex-col rounded-[1.15rem] border border-[#e4d0aa] bg-[#fff8ee] px-3 py-3.5 @min-[280px]:px-4 @min-[280px]:py-4">
             <h3 className="text-center font-sans text-lg leading-none font-extrabold tracking-[0.12em] text-[#17233a] uppercase @min-[280px]:text-[1.45rem]">
               {story.howToTitle}
             </h3>
@@ -128,6 +132,7 @@ export function HowToBuy() {
               </ExternalAction>
             </div>
           </article>
+          </div>
         </div>
       </div>
     </div>

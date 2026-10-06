@@ -9,9 +9,14 @@ const labelClass =
 
 export function TokenCard() {
   return (
+    <div className="card-stage">
+    <div className="card-slab">
+      <span aria-hidden="true" className="card-slab-depth" />
+      <span aria-hidden="true" className="card-slab-side" />
+      <span aria-hidden="true" className="card-slab-bottom" />
     <article
       id="business-card"
-      className="@container relative flex aspect-[3/4] w-full min-w-0 flex-col overflow-hidden rounded-[1.15rem] border-2 border-[#e6cb8c] bg-[#16325c] text-[#f7f1e6] shadow-[0_18px_36px_rgba(12,24,48,0.35)]"
+      className="card-slab-face @container relative flex aspect-[3/4] w-full min-w-0 flex-col overflow-hidden rounded-[1.15rem] border-2 border-[#e6cb8c] bg-[#16325c] text-[#f7f1e6]"
     >
       <div
         aria-hidden="true"
@@ -59,5 +64,7 @@ export function TokenCard() {
         </div>
       </div>
     </article>
+    </div>
+    </div>
   );
 }
