@@ -6,7 +6,7 @@
  * `buyTax` and `sellTax` are the figures shown on the business card.
  */
 
-export const CONTRACT_PLACEHOLDER = "Coming soon…";
+export const CONTRACT_PLACEHOLDER = "0x8190500d48a032fc7b5abc13c38ed293b2520260";
 
 export const site = {
   name: "Shiba Loves ETH",
@@ -23,8 +23,8 @@ export const site = {
   links: {
     x: "https://x.com/shibalove_eth",
     telegram: "https://t.me/shibaloveeth",
-    swap: "https://www.dextools.io/",
-    chart: "https://dexscreener.com/",
+    swap: "https://www.dextools.io/0x8190500d48a032fc7b5abc13c38ed293b2520260",
+    chart: "https://dexscreener.com/0x8190500d48a032fc7b5abc13c38ed293b2520260",
   },
 } as const;
 
