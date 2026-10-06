@@ -22,7 +22,7 @@ export const site = {
   },
   links: {
     x: "https://x.com/",
-    telegram: "https://t.me/",
+    telegram: "https://t.me/shibaloveeth",
     swap: "https://www.dextools.io/",
     chart: "https://dexscreener.com/",
   },
